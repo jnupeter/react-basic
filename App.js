@@ -17,11 +17,14 @@ class App extends React.Component {
        ReactDOM.render(<GithubRepos username='jnupeter' />, document.getElementById('root'));
     }
 
+    myrefcb() {
+        console.log('========in my ref callback function: ');
+    }
     render() {
         return (
             <div>
               <button onClick={this.update}>update</button>
-              <GithubRepos username='wildfly' />
+              <GithubRepos username='wildfly' ref={(c)=>{console.log('should print as well just after mounted:');}}/>
             </div>
             );
     }
