@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import GithubRepos from './components/github-repos';
+import Users from './components/users';
 
 class App extends React.Component {
     constructor() {
@@ -21,12 +22,7 @@ class App extends React.Component {
         console.log('========in my ref callback function: ');
     }
     render() {
-        return (
-            <div>
-              <button onClick={this.update}>update</button>
-              <GithubRepos username='wildfly' ref={(c)=>{console.log('should print as well just after mounted:');}}/>
-            </div>
-            );
+        return <Users url="http://jsonplaceholder.typicode.com/users"/>;
     }
 }
 
@@ -41,5 +37,8 @@ const Widget = (props)=>{
 
 //stateless
 //const App = ()=>{ return React.createElement('h1', null, 'anotherway');}
+
+              //<button onClick={this.update}>update</button>
+              //<GithubRepos username='wildfly' ref={(c)=>{console.log('should print as well just after mounted:');}}/>
 
 export default App;
